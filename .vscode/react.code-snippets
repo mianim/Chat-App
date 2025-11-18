@@ -1,0 +1,95 @@
+{
+    "React Function Component (function)": {
+        "prefix": "rfc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "function ${1:ComponentName}() {",
+            "  return (",
+            "    <div>${2}</div>",
+            "  );",
+            "}",
+            "",
+            "export default ${1:ComponentName};"
+        ],
+        "description": "创建基本的函数式组件"
+    },
+    "React Function Component (arrow)": {
+        "prefix": "rfce",
+        "body": [
+            "import React from 'react';",
+            "",
+            "const ${1:ComponentName} = () => {",
+            "  return (",
+            "    <div>${2}</div>",
+            "  );",
+            "};",
+            "",
+            "export default ${1:ComponentName};"
+        ],
+        "description": "创建箭头函数形式并立即导出的组件"
+    },
+    "React Arrow Function w/Props": {
+        "prefix": "rafc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "const ${1:ComponentName} = ({ ${2:props} }) => {",
+            "  return (",
+            "    <div>${3}</div>",
+            "  );",
+            "};",
+            "",
+            "export default ${1:ComponentName};"
+        ],
+        "description": "带解构 props 的箭头函数组件"
+    },
+    "React useState/useEffect Template": {
+        "prefix": "rfch",
+        "body": [
+            "import React, { useEffect, useState } from 'react';",
+            "",
+            "const ${1:ComponentName} = () => {",
+            "  const [${2:state}, set${3:State}] = useState(${4:null});",
+            "",
+            "  useEffect(() => {",
+            "    ${5:// side effects}",
+            "  }, [${6}]);",
+            "",
+            "  return (",
+            "    <div>${7}</div>",
+            "  );",
+            "};",
+            "",
+            "export default ${1:ComponentName};"
+        ],
+        "description": "包含 useState 与 useEffect 的函数组件"
+    },
+    "React Context Provider": {
+        "prefix": "rctx",
+        "body": [
+            "import React, { createContext, useContext, useState } from 'react';",
+            "",
+            "const ${1:ContextName}Context = createContext();",
+            "",
+            "export const use${1:ContextName} = () => useContext(${1:ContextName}Context);",
+            "",
+            "export const ${1:ContextName}Provider = ({ children }) => {",
+            "  const [${2:value}, set${3:Value}] = useState(${4:null});",
+            "",
+            "  const contextValue = {",
+            "    ${2:value},",
+            "    set${3:Value}",
+            "  };",
+            "",
+            "  return (",
+            "    <${1:ContextName}Context.Provider value={contextValue}>",
+            "      {children}",
+            "    </${1:ContextName}Context.Provider>",
+            "  );",
+            "};"
+        ],
+        "description": "快速创建 Context Provider 及自定义 hook"
+    }
+}
+
